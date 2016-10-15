@@ -1,0 +1,252 @@
+.header {
+  position: relative;
+  z-index: 100;
+}
+
+.header-menu {
+  position: fixed;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.header-menu:before,
+.header-menu:after {
+  position: absolute;
+  height: 100%;
+  background: $bt-hover;
+  content: '';
+}
+
+.header-menu_active {
+  display: flex;
+}
+
+.header-menu__list {
+  position: relative;
+  z-index: 100;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.header-menu__item {
+  margin: 45px 0;
+  transform: rotateX(-90deg);
+}
+
+.header-menu__link {
+  color: $text-header;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 63PX;
+  font-family: SansusWebissimo;
+  cursor: pointer;
+  transition: all linear 0.3s;
+  @include media($phones) {
+    font-size: 35PX;
+  }
+  @include media($tablets) {
+    font-size: 49PX;
+  }
+  &:hover {
+    color: $text-header;
+  }
+  &:after {
+    display: block;
+    margin: auto;
+    width: 0;
+    height: 3px;
+    background: $text-header;
+    content: '';
+    transition: all linear 0.3s;
+  }
+  &:hover:after {
+    width: 83px;
+  }
+}
+
+
+.welcome-menu {
+  display: table;
+  width: 100%;
+}
+
+.welcome-menu__list {
+  display: table-row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-menu__item_index {
+  display: table-cell;
+}
+
+.header-menu__item_linc {
+  text-decoration: none;
+}
+
+.header__menu {
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+  left: 0;
+  display: table;
+  width: 100%;
+}
+
+.welcome-menu__list {
+  display: table-row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.welcome-menu__item {
+  display: table-cell;
+  border-right: 1px solid $text-header;
+}
+
+.welcome-menu__link {
+  display: block;
+  padding: 14PX 20px;
+  background: $bt;
+  font-weight: 500;
+  text-decoration: none;
+  color: $text-header;
+  cursor: pointer;
+  transition: all linear 0.3s;
+  font-size: 16PX;
+  &:disabled{
+    background: $bt_dis;
+  }
+  @include media($phones){
+    font-size: 14PX;
+  }
+}
+.welcome-menu__link-input{
+  outline: none;
+  border: 0;
+  width: 100%;
+}
+.welcome-menu__link:hover {
+  background: $bt-hover;
+  color: $text-header-hover;
+}
+
+.welcome-menu__link:active {
+  text-decoration: underline;
+}
+
+.welcome-menu__item:last-child {
+  border-right: 0;
+}
+
+.header__about-block_index {
+  min-width: 250px;
+  background: $logo_a_fon;
+  transition: all 0.35s ease 0.35s;
+  transform: translateZ(0) rotateY(0);
+}
+
+.header-menu-button {
+  position: absolute;
+  top: 23px;
+  right: 31px;
+  z-index: 1001;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 40PX;
+  height: 35PX;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: $text-header;
+  text-decoration: none;
+  text-indent: -9999px;
+  font-size: 0;
+  cursor: pointer;
+  transition: all linear 0.3s;
+  appearance: none;
+  @include media($phones){
+    top: 10PX;
+    right: 10PX;
+    width: 26PX;
+    height: 23PX;
+  }
+}
+
+.header-menu-button:hover {
+  color: $icon-hover;
+  opacity: 0.3;
+}
+
+.header-menu-button_icon {
+  position: absolute;
+  top: 16px;
+  right: 0px;
+  left: 0px;
+  display: block;
+  height: 4PX;
+  background: white;
+  @include media($phones){
+    top: 10PX;
+    height: 3PX;
+  }
+}
+
+.header-menu-button_icon:before,
+.header-menu-button_icon:after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4PX;
+  background-color: #fff;
+  content: "";
+  transition-delay: 0.3s, 0;
+  transition-duration: 0.3s, 0.3s;
+  @include media($phones) {
+    height: 3PX;
+  }
+}
+
+.header-menu-button_icon:before {
+  top: -15PX;
+  transition-property: top, transform;
+  @include media($phones) {
+    top: -10PX;
+  }
+}
+
+.header-menu-button_icon:after {
+  bottom: -15PX;
+  transition-property: bottom, transform;
+  @include media($phones) {
+    bottom: -10PX;
+  }
+}
+
+.header-menu-button_active {
+  span {
+    background: none;
+    &:before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &:after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.header_about {
+  padding-bottom: 160px;
+}

@@ -1,0 +1,49 @@
+.preloader{
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: $preloader_bg;
+  z-index: 999;
+}
+.preloader__counter{
+  color:$preloader_color;
+  position: absolute;
+  line-height: 50PX;
+  width: 50PX;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  margin-top: -25PX;
+  margin-left: -25PX;
+  font-weight: 900;
+  &:after{
+    content: '';
+    position: absolute;
+    border-radius: 100%;
+    height: 2PX;
+    width: 2PX;
+    margin-left: -1px;
+    margin-top: -1px;
+    top: 50%;
+    left: 50%;
+    box-shadow:$preloader_color 3px -37px 0 3px;
+    animation: animation_rotate 1s ease-in infinite;
+  }
+}
+.preloader__svg{
+  fill:$preloader_color;
+  stroke:$preloader_color;
+  position: absolute;
+  height: 60PX;
+  width: 60PX;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  margin-top: -30PX;
+  margin-left: -30PX;
+  stroke-width:12;
+}
+
+

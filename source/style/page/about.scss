@@ -1,0 +1,246 @@
+.about {
+  @include media_min($desktop) {
+    margin-left: 300px;
+  }
+  @include media($tablets) {
+    max-width: 61vw;
+    margin: auto;
+    min-width: 320px;
+  }
+  @include media($phones) {
+    width: 100vw;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+.content_about {
+  position: relative;
+  background: $about_bg_right;
+  font-size: 0;
+  @include media($phones){
+    margin-bottom: -43PX;
+  }
+}
+
+.content-about__block {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 20px 34px 36px;
+  width: 50%;
+  vertical-align: top;
+  font-size: 16px;
+  @include media($tablets) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.content-about__block_left {
+  background: $about_bg_left;
+  padding: 0 77px 34px 70px;
+  &:before {
+    float: right;
+    margin-right: -80px;
+    border-width: 180px 0 0 1100px;
+    border-color: transparent transparent transparent $about_bg_left;
+    @include media($tablets) {
+      border-width: 180PX 1100PX 50PX 1100PX;
+      margin: -210PX auto 0 -1100PX;
+      border-color: transparent #f2f0e8 #f2f0e8 #f2f0e8;
+      float: none;
+      position: absolute;
+      left: 50%;
+      width: 0;
+    }
+  }
+}
+
+.content-about__block_right {
+  background: $about_bg_right;
+  &:before {
+    float: left;
+    margin-left: -40px;
+    border-width: 0 0 180px 1100px;
+    border-color: transparent transparent $about_bg_right transparent;
+    @include media($tablets) {
+      display: none;
+    }
+  }
+  @include media($tablets) {
+    padding-top: 28PX;
+    text-align: center;
+  }
+}
+
+.content-about__description {
+  line-height: 1.5em;
+  margin-bottom: 48PX;
+  text-align: left;
+  @include media($tablets) {
+    max-width: 61vw;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 320px;
+  }
+  @include media($phones) {
+    width: 100vw;
+    min-width: 0;
+    max-width: none;
+  }
+  @include media(($phones + 8)) {
+    padding: 8PX;
+    box-sizing: border-box;
+  }
+}
+
+.content-about__block:before {
+  margin-top: -180PX;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  content: '';
+}
+
+.about__about-star {
+  top: -35px;
+  fill: $about_bg_left_left_star;
+  stroke: $about_bg_left_left_star;
+  height: 115px;
+}
+
+.icon-about_bg_right {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1100px;
+  height: 360px;
+  fill: $about_bg_right;
+}
+
+.icon-about_bg_left {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: 1100px;
+  height: 360px;
+  fill: $about_bg_left;
+}
+
+.about__photo_box {
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 32px;
+  max-width: 440px;
+  width: 100%;
+  @include media($tablets) {
+    max-width: none;
+  }
+}
+
+.dashed-title_about {
+  margin-bottom: 12px;
+}
+
+.dashed-title_contact:after {
+  margin-top: 16px;
+}
+
+.dashed-title_contact {
+  margin-bottom: 20px;
+}
+
+.about__photo_img {
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.about_text {
+  line-height: 1.4em;
+  margin-top: 0px;
+  margin-bottom: 27PX;
+  @include media(($phones + 8)) {
+    padding: 8PX;
+  }
+}
+
+.contacts-block {
+  width: 100vw;
+  display: block;
+  height: auto;
+  margin-bottom: 0px;
+  padding-bottom: 0;
+  position: relative;
+  @include media_min($tablets) {
+    position: relative;
+    display: block;
+    padding-bottom: 120vh;
+  }
+}
+
+.google-map {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 54;
+  position: relative;
+  height: 70vh;
+  @include media_min($tablets) {
+    position: absolute;
+    height: 100%;
+  }
+}
+
+.contacts-block__windos {
+  position: relative;
+  z-index: 55;
+  margin: 0;
+  padding: 20px;
+  //width: 580px;
+  background: $contact_map_bg;
+  font-size: 16px;
+  width: 100%;
+  transform:none;
+  box-sizing: border-box;
+  @include media_min($tablets) {
+    width: 350PX;
+    margin-left: -175PX;
+    left: 50%;
+    transform: translate(0,50%);
+
+  }
+  @include media_min($laptop) {
+    width: 580PX;
+    margin-left: -290PX;
+  }
+}
+
+.contacts-block__icon {
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+  fill: $contact_map_inons;
+}
+
+.contacts-block__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts-block__item {
+  display: inline-block;
+  width: 235px;
+  line-height: 60px;
+}
+
+.contacts-block__text {
+  display: inline-block;
+  max-width: 180px;
+  vertical-align: middle;
+  line-height: 20px;
+}

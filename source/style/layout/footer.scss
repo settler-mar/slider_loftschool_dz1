@@ -1,0 +1,252 @@
+.footer {
+  position: relative;
+  width: 100%;
+  color: $footer_text;
+  text-align: center;
+  z-index: 70;
+}
+
+.footer__copyright {
+  background: $footer_bg_cr;
+  color: $footer_text;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8PX;
+  @include media_min($tablets) {
+    line-height: 38PX;
+    padding: 0;
+  }
+}
+.footer__copyright_user{
+  display: block;
+  white-space:normal;
+  &:after{
+    content: '';
+    @include media_min($tablets){
+      content: ' | ';
+    }
+  }
+  @include media_min($tablets){
+    white-space:nowrap;
+    display: inline-block;
+  }
+}
+.footer__copyright_text{
+  white-space:nowrap;
+}
+.footer__full-menu {
+  width: 100%;
+  background: $dop_footer_bg;
+  font-size: 0;
+  @include clearfix;
+}
+
+.footer__full-menu__column {
+  vertical-align: top;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18PX 30PX;
+  display: block;
+  width: 100%;
+  border-bottom:rgba($footer_text,0.2) 1px solid;
+  box-sizing: border-box;
+  @include media_min($laptop) {
+    padding: 26PX 30PX;
+  }
+  @include media_min($tablets) {
+    width: auto;
+    display: inline-block;
+    text-align: left;
+    float: left;
+    border-bottom:0;
+  }
+}
+
+.footer__full-menu__column_description {
+  width: 100%;
+  text-align: center;
+  min-height: 79PX;
+  @include media_min($tablets){
+    border-bottom:rgba($footer_text,0.2) 1px solid;
+    text-align: center;
+    width: 100%;
+    min-height: 0;
+  }
+  @include media_min($laptop){
+    box-sizing: content-box;
+    width: 350PX;
+    text-align: left;
+    border-bottom:0;
+  }
+}
+
+.footer__full-menu__column_contact {
+  border-bottom: 0;
+  @include media_min($tablets) {
+    width: 305PX;
+    float: right;
+    text-align: right;
+  }
+  @include media_min($laptop){
+    text-align: left;
+  }
+}
+
+.footer__full-menu__column:before {
+  @include media_min($laptop) {
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: -30px;
+    width: 1px;
+    height: 87px;
+    background: $footer_text;
+    content: "";
+    opacity: 0.2;
+    float: left;
+  }
+}
+
+.footer__full-menu__column:first-child:before {
+  display: none;
+}
+.footer-menu {
+  min-height: 42PX;
+  @include media_min($laptop) {
+    min-height: 0;
+    margin: 0 0 46px 0;
+  }
+}
+
+.footer-menu__list {
+  padding: 0;
+  margin-top: 0;
+  @include media_min($tablets) {
+    white-space: nowrap;
+  }
+}
+
+.footer-menu__item {
+  display: inline-block;
+  margin-right: 12px;
+  list-style: none;
+  @include media_min($tablets){
+    margin-right: 28px;
+  }
+  @include media_min($laptop){
+    margin-right: 40px;
+  }
+}
+
+.footer-menu__link {
+  color: $footer_text;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Roboto-Bold";
+}
+
+.footer-menu__item:last-child {
+  margin-right: 0px;
+}
+
+.my_linc {
+  position: relative;
+  top: 0;
+  left: 0;
+  line-height: 13px;
+  a {
+    margin-right: 17px;
+  }
+  svg {
+    opacity: 0.2;
+  }
+  a:hover svg {
+    opacity: 1;
+  }
+}
+.footer-index {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  @include media($tablets){
+    bottom: auto;
+  }
+}
+.footer__copyright-index {
+   background: transparent;
+}
+
+.footer__full-menu-index {
+  display: none;
+}
+
+//прибить подвал
+html, body {
+  height: 100%;
+}
+
+.page-wrap {
+  margin-bottom: -38PX;
+  min-height: 100vh;
+  overflow-x:hidden;
+
+}
+
+.page-wrap:after {
+  display: block;
+  content: "";
+}
+
+.footer, .page-wrap:after {
+  height: 38PX;
+}
+
+.page-wrap.index:after {
+  height: auto;
+}
+
+.page-wrap_index {
+  overflow: hidden;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 100vh;
+  min-height: 600px;
+  @include media($tablets){
+    min-height: 620px;
+  }
+  @include media($phones){
+    min-height: 520px;
+  }
+  @include media($laptop) {
+    background: transparent;
+  }
+}
+.page-wrap_about{
+  @include media($phones) {
+    margin-bottom:0;
+  }
+}
+
+.page-wrap_blog{
+  margin-bottom: -34PX;
+}
+.footer-works{
+  margin-top: -417PX;
+  @include media_min($laptop){
+    margin-top: -196PX;
+  }
+  @include media_min($tablets){
+    margin-top:  -267PX;
+  }
+}
+.footer-about{
+  margin-top: 0PX;
+  @include media_min($laptop){
+    margin-top: -196PX;
+  }
+  @include media_min($tablets){
+    margin-top:  -267PX;
+  }
+}

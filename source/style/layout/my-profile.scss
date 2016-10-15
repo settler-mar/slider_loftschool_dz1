@@ -1,0 +1,101 @@
+.my-infotmation {
+  display: flex;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  min-height: 450px;
+}
+.my-infotmation_works{
+  min-height: 600px;
+}
+.my-infotmation_blog{
+  padding-top: 70px;
+  box-sizing: border-box;
+}
+.my-infotmation__container {
+  position: relative;
+  z-index: 40;
+  margin: auto;
+  padding-bottom: 200px;
+  display: flex;
+}
+
+.my-infotmation__container_index {
+  margin: 100PX auto;
+  @include media($phones){
+    margin:90PX auto;
+  }
+}
+
+.my-infotmation__title {
+  margin:0;
+  font-weight: 500;
+  font-size: 35px;
+  font-family: Roboto-Medium;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.my-infotmation__title_index {
+  font-size: 28PX;
+  margin-bottom: 8PX;
+  margin-top: 0px;
+  @include media($phones){
+    font-size: 21PX;
+    margin-bottom: 12PX;
+  }
+}
+
+
+.my-infotmation__sub-title {
+  display: block;
+  text-transform: none;
+  font-weight: 400;
+  font-size: 16PX;
+  font-family: Roboto-Light;
+  opacity: 0.8;
+  margin-bottom: 28PX;
+  @include media($phones){
+    font-size: 14PX;
+  }
+}
+
+.my-infotmation__about-block {
+  margin: auto;
+  padding: 40PX 0 0;
+  width: 380PX;
+  color: $text-header;
+  text-align: center;
+  transition: all 0.35s ease 0.35s;
+  @include media($tablets){
+    width: 348PX;
+  }
+  @include media($phones){
+    width: 300PX;
+  }
+}
+
+.my-infotmation__about-block_index {
+  background: $logo_a_fon;
+}
+
+.my-infotmation__logo-block {
+  position: relative;
+  z-index: 80;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 140PX;
+  height: 140PX;
+  border-radius: 100%;
+  @include media($phones){
+    margin-bottom: 15px;
+  }
+}
+.my-infotmation__logo-img {
+  height: 140PX;
+}
+
+.my-infotmation__blog{
+  height:400px;
+}

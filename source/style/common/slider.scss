@@ -1,0 +1,252 @@
+$slider_timeout:0.5s;
+$a_hover:#083c96;
+$here_slide_bg:#e3e2de;
+$other_slider_shirma:rgba(170, 171, 183, .7);;
+$other_slider_shirma_hover:rgba(126, 127, 138, .7);;
+$slider_chenger:#fff;
+$slider_chenger_shadow: 0 2px 2px rgba(0, 0, 0, .16);
+$slide_this_fon:#f2f0e8;
+$slide_this_text:#474b57;
+$slide_skill:#083c96;
+$slide_href_bg:#004cd1;
+$slide_href_bg_hover:#083c96;
+
+.slider {
+  position: relative;
+  background: $slide_this_fon;
+  font-size: 0;
+  font-family: Roboto-Medium;
+  height: 100vh;
+  padding-left: 50vw;
+  overflow-x:hidden ;
+}
+
+.slider__here-tab {
+  position: absolute;
+  top:0;
+  left: 0;
+  display: inline-block;
+  width: 50%;
+  height: 100vh;
+  vertical-align: top;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.slider__image-control-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 4vw;
+  width: 100%;
+  height: 100%;
+  background-color: $here_slide_bg;
+  vertical-align: middle;
+  transition: all linear $slider_timeout;
+}
+
+.slider__image-control-box_here {
+  opacity: 0;
+  transition: all linear $slider_timeout;
+}
+
+.slider__image-control-box_active {
+  opacity: 1;
+}
+
+.slider__image-control-box_next {
+  top: -100%;
+}
+
+.slider__image-control-box_prev {
+  top: 100%;
+}
+
+.slider__full-information {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.full_slide_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity:0;
+  transition: all linear 0.3s;
+
+  &:before {
+    content :'';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.full_slide_box.active .slider__skills-item{
+  transform: rotateX(0deg) translateY(0px);
+}
+.full_slide_box.active{
+  opacity:1;
+  z-index: 50;
+}
+.slider__title>span{
+  opacity:0;
+  display: inline-block;
+}
+.slider__title>span.show_letter {
+  opacity:1;
+}
+.slider__rigth-tab {
+  display: inline-block;
+  width: 50%;
+  height: 100vh;
+  vertical-align: middle;
+}
+
+.slider__title {
+  margin: auto;
+  padding-bottom: 25px;
+  max-width: 500px;
+  color: $slide_this_text;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 35px;
+  font-family: SansusWebissimo;
+  line-height: 41px;
+}
+
+.slider__title:after {
+  display: block;
+  margin: auto;
+  margin-top: 18px;
+  width: 89px;
+  height: 3px;
+  background: $slide_this_text;
+  content: '';
+  opacity: 0.5;
+}
+
+.slider__skills-list {
+  margin: 0 0 58px 0;
+  padding: 0;
+}
+
+.slider__skills-item {
+  display: inline-block;
+  color: $slide_skill;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all linear 1s;
+  transform: rotateX(-90deg) translateY(20px);
+}
+
+.slider__skills-item:before {
+  content: ', ';
+}
+
+.slider__skills-item:first-child:before {
+  content: '';
+}
+
+.slider__link {
+  display: inline-block;
+  padding: 14px 21px;
+  background: $slide_href_bg;
+  color: $slider_chenger;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.slider__link:hover {
+  background: $slide_href_bg_hover;
+  color: $slider_chenger;
+}
+
+.slider__link-icon {
+  margin-right: 12px;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+
+.slider__here-slide,
+.slider__control {
+  overflow: hidden;
+}
+
+.slider__here-slide {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 4vw;
+  width: 50vw;
+  height: 70vh;
+  background-color: $here_slide_bg;
+  text-align: center;
+}
+
+.slider__image-here-slide {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.slider__button {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  margin-top: -27px;
+  width: 100%;
+  height: 54px;
+  color: $slider_chenger;
+  font-size: 46px;
+  transition: all linear 0.3s;
+  z-index: 99;
+}
+
+.slider__control-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.slider__controls{
+  height: 30vh;
+}
+.slider__control {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 49;
+    width: 100%;
+    height: 100%;
+    background: $other_slider_shirma;
+    content: '';
+    transition: all linear 0.3s;
+  }
+  &:hover:before {
+    background: $other_slider_shirma_hover;
+  }
+}
+.slider__control:hover .slider__button {
+  top: 60%;
+}
+
+.slider__control.next:hover .slider__button {
+  top: 40%;
+}
