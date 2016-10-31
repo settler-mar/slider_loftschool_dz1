@@ -250,3 +250,46 @@ $slide_href_bg_hover:#083c96;
 .slider__control.next:hover .slider__button {
   top: 40%;
 }
+
+.show_letter {
+  animation: show_letter 0.3s forwards;
+}
+
+.slider__image-control-box_next-show {
+  top: 0;
+  animation: slide_move_up $slider_timeout linear;
+}
+
+.slider__image-control-box_prev-show {
+  top: 0;
+  animation: slide_move_down $slider_timeout linear;
+}
+@keyframes show_letter {
+  0%{
+    transform: rotateX(-90deg) translateY(-90px);
+  }
+  80%{
+    transform: rotateX(-30deg) translateY(10px)
+  }
+  100%{
+    transform: rotateX(0deg) translateY(0px)
+  }
+}
+
+@keyframes slide_move_up {
+  from {
+    top: 100%
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes slide_move_down {
+  from {
+    top: -100%
+  }
+  to {
+    top: 0%;
+  }
+}
